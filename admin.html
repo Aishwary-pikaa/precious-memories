@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precious Memories - Admin Panel</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f4f4f4;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        section {
+            background: rgb(245, 177, 177);
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 20px auto;
+            max-width: 800px;
+        }
+
+        section h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            padding: 10px 15px;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .form-group button:hover {
+            background: #555;
+        }
+
+        .message-list {
+            margin-top: 20px;
+        }
+
+        .message-list li {
+            background: #b7a5e7;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Admin Panel</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="experience.html">Experience & Skills</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="admin.html">Admin Panel</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Add Portfolio Item</h2>
+            <form id="portfolioForm">
+                <div class="form-group">
+                    <label for="itemTitle">Item Title</label>
+                    <input type="text" id="itemTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="itemDescription">Item Description</label>
+                    <textarea id="itemDescription" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="itemImage">Image URL</label>
+                    <input type="url" id="itemImage" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Add Item</button>
+                </div>
+            </form>
+        </section>
+
+        <section>
+            <h2>Messages from Clients</h2>
+            <ul class="message-list" id="messageList">
+                <li><strong>John Doe:</strong> Interested in booking a session for a wedding on June 15th.</li>
+                <li><strong>Jane Smith:</strong> Would like to know more about your pricing and packages.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Precious Memories. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('portfolioForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const title = document.getElementById('itemTitle').value;
+            const description = document.getElementById('itemDescription').value;
+            const image = document.getElementById('itemImage').value;
+
+            alert(`Portfolio item added:\nTitle: ${title}\nDescription: ${description}\nImage URL: ${image}`);
+
+            // Clear the form
+            this.reset();
+        });
+
+        // Placeholder for message handling
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Admin panel is ready.');
+        });
+    </script>
+</body>
+</html>
